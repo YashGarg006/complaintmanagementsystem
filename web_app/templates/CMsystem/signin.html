@@ -1,0 +1,108 @@
+{% extends "CMsystem/index.html" %}
+
+
+body {
+padding-top: 40px;
+padding-bottom: 40px;
+
+}
+
+
+
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="container">
+    {% load static %}
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        {{ message }}
+</div>
+{% endfor %}
+<div class="container">
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            <h3> You are already logged In. First logout,To switch account?</h3>
+
+            {% else %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <br>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+            <br>
+
+            <!-- google button -->
+            {% load socialaccount %}
+
+            {% if user.is_authenticated %}
+            <h3> You are already logged In. First logout,To switch account?</h3>
+            {% else %}
+            <!-- <a href="{% provider_login_url 'google' %}">Continue with google</a> -->
+            <div class="row">
+              <div class="col-md-3">
+                <table>
+                  <tr>
+                    <td style="padding:0 15px 0 0;">
+                      <a class="btn btn-outline-dark " href= "{% provider_login_url 'google' %} "role="button"
+                        style="text-transform:none; width: 120px;">
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                        Login with Google
+                      </a>
+                    </td>
+      
+                    <td>
+                      <a href="{% provider_login_url 'github' %}" class="btn btn-outline-dark" role="button"
+                        style="text-transform:none; width: 120px;"> <img width="20px"
+                          style="margin-bottom:3px; margin-right:5px" alt="GitHub sign-in"
+                          src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+                        Login with GitHub
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+      
+              </div>
+            </div>
+            {% endif %}
+      
+            <br>
+      
+          </form>
+            <!-- {% load socialaccount %} -->
+
+            {% if user.is_authenticated %}
+            <h3> You are already logged In. First logout,To switch account?</h3>
+
+
+            {% endif %}
+
+            <br>
+
+        </form>
+        <div class="border-top pt-3">
+            <small>
+                Need An Account? <a class="ml-2" href="{% url 'register' %}"><button class="btn btn-primary"
+                        type="submit">Sign
+                        Up</button></a>
+                <br>
+                <br>
+                <div class="text-muted ">
+
+                    <a href="{% url 'password_reset' %}"><button class="btn btn-primary" type="submit"
+                            style="height: 58px; width: 110px;">Forgot
+                            Password?</button></a>
+                </div>
+            </small>
+        </div>
+        {% endif %}
+    </div>
+    {% endblock content %}

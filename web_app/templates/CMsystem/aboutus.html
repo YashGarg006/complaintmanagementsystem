@@ -1,0 +1,225 @@
+{% extends "CMsystem/index.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        
+        
+        <link rel="stylesheet" href="{% static '/css/teams.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    
+    <body>
+        <!-- <section class="speakers-section" style="background-image: linear-gradient(to top right, rgb(1, 0, 32), rgb(2, 6, 43), rgb(0, 29, 41), rgb(0, 38, 54)) !important;";> -->
+            <!-- <section class="speakers-section"> -->
+                <div class="parallax-scene parallax-scene-2 anim-icons">
+                    <span data-depth="0.40" class="parallax-layer icon icon-circle-5"></span>
+                    <span data-depth="0.99" class="parallax-layer icon icon-circle-5"></span>
+                </div>
+                <div class="sec-title"></div>
+                <!-- <h4 style="font-family: Orbitron; margin-left: 20px;">Online student complaint management system is a web-based application that was designed to make the process of resolving complaints made by students in the university environment easy. Using the software, the university management would be able to maintain an effective, timely, and equitable complaints handling system that is easily accessible by the students. </h4> -->
+                <!-- <div class="sec-title light text-center">
+    <h4 style="font-family: Orbitron; text-align: center;">Meet the Team</h4>
+</div> -->
+                <div class="container">
+                    <div class="sec-title light text-center" style="margin-bottom: 0;">
+                        <h2 style="font-family: Orbitron; margin-bottom: 0;">Team</h2>
+                    </div>
+                    
+                    <div class="row">
+                        
+                        <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img src="{% static 'img/yashgarg.jpg' %}" alt="">
+                                        <div class="caption-box">
+                                            <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Yash Garg</span>
+                                        </div>
+                                        <div class="social-links">
+                                            <ul>
+                                                <h4>202101006@daiict.ac.in</h4>
+                                            </ul>
+                                        </div>
+                                    </figure>
+                                </div>
+                                
+                            </div>
+                        </div>
+            
+                       
+                        
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static 'img/Naisheel.jpg' %}" alt="">
+                            <div class="caption-box">
+                                <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Naisheel Patel</span>
+                            </div>
+                            <div class="social-links">
+                                <ul>
+                                    <h4>202101014@daiict.ac.in</h4>
+                                </ul>
+                            </div>
+                        </figure>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+                        <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img src="{% static 'img/Mayank.jpg' %}" alt="">
+                                        <div class="caption-box">
+                                    <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Mayank Gour</span>
+                                </div>
+                                <div class="social-links">
+                                    <ul>
+                                        <h4>202101072@daiict.ac.in</h4>
+                                    </ul>
+                                </div>
+                            </figure>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="{% static 'img/Rishi.jpeg' %}" alt="">
+                                <div class="caption-box">
+                                    <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Rishi Arora</span>
+                                </div>
+                                <div class="social-links">
+                                    <ul>
+                                        <h4>202101025@daiict.ac.in</h4> 
+                                    </ul>
+                                </div>
+                            </figure>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="{% static 'img/Sarthak.jpg' %}" alt="">
+                                <div class="caption-box">
+                                    <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Sarthak Kaushik</span>
+                                </div>
+                                <div class="social-links">
+                                    <ul>
+                                        <h4>202101084@daiict.ac.in</h4>
+                                    </ul>
+                                </div>
+                            </figure>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static 'img/aarsh.jpg' %}" alt="">
+                            <div class="caption-box">
+                                <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Aarsh Bagda</span>
+                            </div>
+                            <div class="social-links">
+                                <ul>
+                                    <h4>202101044@daiict.ac.in</h4>
+                                </ul>
+                            </div>
+                        </figure>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static 'img/Kavya.jpg' %}" alt="">
+                            <div class="caption-box">
+                                <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Kavya Kumar</span>
+                            </div>
+                            <div class="social-links">
+                                <ul>
+                                    <h4>202101017@daiict.ac.in</h4>
+                                </ul>
+                            </div>
+                        </figure>
+                    </div>
+                 
+                </div>
+            </div>
+
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static 'img/harshill.jpg' %}" alt="">
+                            <div class="caption-box">
+                                <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Harshil Patel</span>
+                            </div>
+                            <div class="social-links">
+                                <ul>
+                                    <h4>202101019@daiict.ac.in</h4>
+                                </ul>
+                            </div>
+                        </figure>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image">
+                            <img src="{% static 'img/aryesh.jpg' %}" alt="">
+                            <div class="caption-box">
+                                <span class="designation text-center pb-3" style="font-family: Orbitron; font-size: 20px;">Aryesh Dave</span>
+                            </div>
+                            <div class="social-links">
+                                <ul>
+                                    <h4>202101007@daiict.ac.in</h4>
+                                </ul>
+                            </div>
+                        </figure> 
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+                <h4 style="font-family: Orbitron; margin-left: 20px;">Online student complaint management system is a web-based application that was designed to make the process of resolving complaints made by students in the university environment easy. Using the software, the university management would be able to maintain an effective, timely, and equitable complaints handling system that is easily accessible by the students. </h4>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/glightbox.min.js' %}"></script>
+<!-- <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script> -->
+<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+<!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+{% endblock content %}

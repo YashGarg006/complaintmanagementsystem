@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+	<style type="text/css">
+		html {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+
+		}
+
+		.push {
+			height: 50px;
+		}
+
+		.jumbotron {
+			background-color: white;
+		}
+
+		.page-footer {
+			background-color: #00D1FB;
+			bottom: 700px;
+			top: 250px;
+			position: relative;
+		}
+
+		.form-signin {
+			max-width: 330px;
+			padding: 15px;
+			margin: 0 auto;
+		}
+
+		.form-signin .form-signin-heading,
+		.form-signin .checkbox {
+			margin-bottom: 10px;
+		}
+
+		.form-signin .checkbox {
+			font-weight: normal;
+		}
+
+		.form-signin .form-control {
+			position: relative;
+			height: auto;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+			font-size: 16px;
+		}
+
+		.form-signin .form-control:focus {
+			z-index: 2;
+		}
+
+		.form-signin input[type="email"] {
+			margin-bottom: -1px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		.form-signin input[type="password"] {
+			margin-bottom: 10px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			font-family: sans-serif;
+		}
+
+		.navbar {
+			background-color: black;
+			color: white;
+			border: 2px solid rgb(0, 0, 0);
+			border-bottom-left-radius: 35px;
+			border-bottom-right-radius: 35px;
+			box-shadow: 0 3px 4px rgb(87, 105, 107);
+		}
+
+		.navbar-toggler {
+			color: white;
+		}
+
+		#navbarSupportedContent a {
+			color: white;
+			text-decoration: none;
+			font-size: 20px;
+			margin-right: 5px;
+			padding: 0.4vw 0.6vw;
+			border: 2px solid transparent;
+
+			border-radius: 2vw;
+			transition-duration: 1s;
+			box-shadow: 0 0px 2px rgb(0, 0, 0);
+		}
+
+		#navbarSupportedContent a:hover {
+			color: #000000;
+			background-color: rgb(252, 251, 251);
+			border: 2px solid rgb(248, 230, 230);
+			box-shadow: 0 2px 4px rgb(255, 255, 255);
+
+		}
+
+		#navbarSupportedContent a:active {
+			box-shadow: 0 0 2px darkslategray;
+			transform: translateY(2px);
+		}
+
+		button:active {
+			/*    box-shadow: 0 0 2px darkslategray;*/
+			transform: translateY(2px);
+		}
+
+		#main {
+			display: flex;
+			margin-bottom: 100px;
+		}
+
+		#img1 {
+			float: right;
+			border: 2px solid black;
+			border-radius: 40px;
+			top: 20px;
+			cursor: pointer;
+			box-shadow: 8px 8px 4px rgb(87, 105, 107);
+		}
+
+		h1 {
+			text-align: center;
+			padding-top: 10px;
+		}
+
+		footer {
+			display: flex;
+			margin-top: 1vw;
+			justify-content: space-around;
+			align-items: center;
+			background-color: #588414;
+			color: white;
+		}
+
+		.left a {
+			display: block;
+			margin-left: 5%;
+			padding: 1vh 4vw 2vh 2vw;
+			text-decoration: none;
+			text-decoration: underline;
+			color: #ffffff;
+			/* Link color */
+			font-size: 20px;
+		}
+
+		.right {
+			position: static;
+			text-align: left;
+			width: 28vw;
+			font-size: 20px;
+		}
+
+		.right h2 {
+			position: static;
+			text-align: left;
+		}
+
+		.footer_title {
+			margin-left: 5%;
+		}
+
+		@media only screen and (max-width: 800px) {
+			footer {
+				flex-direction: column;
+			}
+
+			.left {
+				width: 100%;
+				margin: 0px;
+				padding: 2vw;
+			}
+
+			.footer_title {
+				margin-left: 0px;
+			}
+
+			.left a {
+				margin-left: 0px;
+				padding: 0px;
+			}
+
+			.right {
+				width: 100%;
+				padding: 2vw;
+			}
+
+		}
+
+		@media only screen and (max-width: 992px) {
+			#main {
+				flex-direction: column;
+			}
+
+			#main1 {
+				width: 50%;
+			}
+
+			#img1 {
+				float: right;
+				border: 2px solid black;
+				border-radius: 40px;
+				top: 20px;
+				cursor: pointer;
+				box-shadow: 8px 8px 4px rgb(87, 105, 107);
+			}
+
+			#main2 {
+				width: 100%;
+			}
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			font-family: sans-serif;
+		}
+
+		.navbar {
+			background-color: black;
+			color: white;
+			border: 2px solid rgb(0, 0, 0);
+			border-bottom-left-radius: 35px;
+			border-bottom-right-radius: 35px;
+			box-shadow: 0 3px 4px rgb(87, 105, 107);
+		}
+
+		.navbar-toggler {
+			color: white;
+		}
+
+		#navbarSupportedContent a {
+			color: white;
+			text-decoration: none;
+			font-size: 20px;
+			margin-right: 5px;
+			padding: 0.4vw 0.6vw;
+			border: 2px solid transparent;
+
+			border-radius: 2vw;
+			transition-duration: 1s;
+			box-shadow: 0 0px 2px rgb(0, 0, 0);
+		}
+
+		#navbarSupportedContent a:hover {
+			color: #000000;
+			background-color: rgb(252, 251, 251);
+			border: 2px solid rgb(248, 230, 230);
+			box-shadow: 0 2px 4px rgb(255, 255, 255);
+
+		}
+
+		#navbarSupportedContent a:active {
+			box-shadow: 0 0 2px darkslategray;
+			transform: translateY(2px);
+		}
+
+		#admin_signup {
+			text-align: center;
+			font-size: 30px;
+			margin: 3vh;
+		}
+
+		#sign_up {
+			display: flex;
+			justify-content: space-around;
+			background-color: rgb(13, 8, 52);
+			color: white;
+			margin: 1vh 8vw 1vh 8vw;
+			border: 1px solid rgb(13, 8, 52);
+			border-radius: 20px;
+		}
+
+		section {
+			padding: 2vw 2vw 0vw 2vw;
+		}
+
+		img1 {
+			height: 68vh;
+			width: 40vw;
+			border-radius: 20px;
+			margin-left: 40px;
+			margin-top: 40px;
+		}
+
+		form {
+			width: 35vw;
+		}
+
+		label {
+			font-size: 3.2vh;
+			margin: 0.5vh;
+		}
+
+		input.ip {
+			margin: 1.5vh;
+			width: 30vw;
+			height: 3.2vh;
+			border-radius: 4px;
+			border: 2px solid rgb(247, 247, 247);
+			border-radius: 20px;
+			padding-left: 0.8vw;
+			font-size: 20px;
+		}
+
+		.p {
+			font-size: 15px;
+			margin-top: 10px;
+			text-align: center;
+			padding-bottom: 1vw;
+		}
+
+		.bt {
+			display: flex;
+			justify-content: space-around;
+			margin-left: 3vw;
+		}
+
+		.p a {
+			color: yellow;
+		}
+
+		button {
+			width: 6vw;
+			height: 2.5vw;
+			border: 1px solid rgb(13, 8, 52);
+			border-radius: 2vw;
+			cursor: pointer;
+			transition-duration: 0.4s;
+			box-shadow: 0 2px 4px rgb(87, 105, 107);
+		}
+
+		#green:hover {
+			background-color: green;
+			font-weight: bold;
+		}
+
+		#red:hover {
+			background-color: red;
+			font-weight: bold;
+		}
+
+		button:active {
+			box-shadow: 0 0 2px darkslategray;
+			transform: translateY(2px);
+		}
+
+		footer {
+			display: flex;
+			margin-top: 1vw;
+			justify-content: space-around;
+			align-items: center;
+			background-color: #588414;
+			color: white;
+		}
+
+		.left a {
+			display: block;
+			margin-left: 5%;
+			padding: 1vh 4vw 2vh 2vw;
+			text-decoration: none;
+			text-decoration: underline;
+			color: #ffffff;
+			font-size: 20px;
+		}
+
+		.right {
+			position: static;
+			text-align: left;
+			width: 28vw;
+			font-size: 20px;
+		}
+
+		.right h2 {
+			position: static;
+			text-align: left;
+		}
+
+		.footer_title {
+			margin-left: 5%;
+		}
+
+		@media only screen and (max-width: 800px) {
+			footer {
+				flex-direction: column;
+			}
+
+			.left {
+				width: 100%;
+				margin: 0px;
+				padding: 2vw;
+			}
+
+			.footer_title {
+				margin-left: 0px;
+			}
+
+			.left a {
+				margin-left: 0px;
+				padding: 0px;
+			}
+
+			.right {
+				width: 100%;
+				padding: 2vw;
+			}
+
+		}
+
+		@media only screen and (max-width: 1400px) {
+			#sign_up {
+				flex-direction: column;
+			}
+
+			img1 {
+				margin-left: 50%;
+			}
+
+			form {
+				/*        width: 100%;*/
+				margin-left: 60%;
+			}
+
+			input.ip {
+				width: 40vw;
+			}
+
+			.bt {
+				margin-left: 8vw;
+			}
+
+			#red {
+				margin-left: 6vw;
+			}
+		}
+
+		@media only screen and (max-width: 992px) {
+			#img1 {
+
+				margin-left: -50%;
+			}
+
+			form {
+				margin-left: 0px;
+				width: 100%;
+			}
+
+			input.ip {
+				width: 80%;
+			}
+
+			button {
+				width: 20%;
+				height: 20%;
+			}
+
+		}
+
+		body {
+
+			background-color: #eef2f4 !important;
+
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.card {
+			background-color: #eef2f4;
+			border-color: #eef2f4;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-dark navbar-expand-lg px-5">
+		<div class="container-fluid">
+			<a class="navbar-brand text-light fw-bolder fs-4" href="/">Complaint Management System</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold grid gap-3">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/aboutus/">About</a>
+					</li>
+					{% if user.is_authenticated and user.profile.type_user == 'student' %}
+					<li class="nav-item">
+						<a class="nav-link" href="/dashboard/"><span class="fi-account-login"></span>Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/logout/">Logout</a>
+					</li>
+					{% elif user.is_authenticated and user.profile.type_user == 'supervisor' %}
+					<li class="nav-item">
+						<a class="nav-link" href="/allcomplaints/"><span class="fi-account-login"></span>Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/logout/">Logout</a>
+					</li>
+					{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="/register/"><span class="fi-account-login"></span>Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/signin/">Login</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<script>
+		function showSubmitButton() {
+			document.getElementById("submitBtn").style.display = "block";
+			document.getElementById("editBtn").style.display = "none";
+			var form = document.getElementById("myForm");
+			var elements = form.elements;
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].disabled = false;
+			}
+		}
+		function hideSubmitButton() {
+			document.getElementById("editBtn").style.display = "block";
+			document.getElementById("submitBtn").style.display = "none";
+			var form = document.getElementById("myForm");
+			var elements = form.elements;
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].disabled = true;
+			}
+			var edit = document.getElementById("editBtn");
+			edit.disabled = false;
+		}
+	</script>
+
+
+	<main>{% block content %}
+
+		{% endblock content %}</main>
+
+	<div class="push"></div>
+	<footer class="fixed-bottom text-light" style="height:50px; background-color: #000000;">
+		<center>2023 Complaint Management System
+			<br>
+			<a href="https://github.com/Naisheel/Online_Complaint_Registration_and_Management_System" target="_blank">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github"
+					viewBox="0 0 16 16">
+					<path
+						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.20-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.20-.82 2.20-.82.44 1.10.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.20 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+				</svg>
+			</a>
+		</center>
+	</footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</body>
+
+
+</html>
